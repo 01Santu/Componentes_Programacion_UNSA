@@ -3,16 +3,18 @@ void LeeCad(Tcade,int);
 
 //IMPLEMENTACION
 void LeeCad(Tcade cadena,int tam){
-int j;
-j=0;
-char c;
-while(j<tam-1&&(c=getchar())!=EOF&&c!='\n'){
-cadena[j]=c;
-j++;}
-cadena[j]='\0';
-if(c!=EOF&&c!='\n'){
-while((c=getchar())!=EOF&&c!='\n');}
+int j;   //Esta variable sera nuestro indice que nos ayudara a recorrer la cadena
+j=0;     //Inicializamos nuestro indice en 0
+char c;  //Esta variable nos servira para almacenar los caracteres leidos uno a uno
+while(j<tam-1&&(c=getchar())!=EOF&&c!='\n'){  //Ciclara mientras: el indice sea menor a tam-1 y mientras el caracter leido sea distinto a un salto de linea "\n" y distinto de a el fin de archivo "EOF"
+cadena[j]=c;  //Almacena el valor valido en la cadena
+j++;          //Incremento el indice
 }
+cadena[j]='\0';  //Finalizo la cadena con el caracter nulo porque llego a la ultima posicion
+if(c!=EOF&&c!='\n') {while((c=getchar())!=EOF&&c!='\n');}  //Consume y descarta el resto de la línea hasta encontrar '\n' o EOF (Limpia el Buffer).
+}
+
+
 //El tipo de dato Tcade esta previamente definido de la siguiente forma
 typedef char Tcade[TAM];
 //Se puede definir a TAM de la siguiente forma
