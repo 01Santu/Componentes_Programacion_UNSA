@@ -1,0 +1,21 @@
+//PROTOTIPO
+void LeeCad(Tcade,int);
+
+//IMPLEMENTACION
+void LeeCad(Tcade cadena,int tam){
+int j;
+j=0;
+char c;
+while(j<tam-1&&(c=getchar())!=EOF&&c!='\n'){
+cadena[j]=c;
+j++;}
+cadena[j]='\0';
+if(c!=EOF&&c!='\n'){
+while((c=getchar())!=EOF&&c!='\n');}
+}
+//El tipo de dato Tcade esta previamente definido de la siguiente forma
+typedef char Tcade[TAM];
+//Se puede definir a TAM de la siguiente forma
+#define TAM 50
+//Se puede ingresar un valor numerico que indique el tamanio deseado en el lugar de TAM
+typedef char Tcade[50];
