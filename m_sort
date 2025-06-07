@@ -1,0 +1,37 @@
+//Merge Sort metodo de ordenamiento ""recursivo""
+//Prototipo
+void m_sort(Tlista,int,int);
+//Implementacion
+  //Utilizaremos un modulo privado llamado merge
+void merge(Tlista lista,int ini,int med,int fin){
+int k,i,j,t; k=0; i=ini; j=med+1;
+Tlista aux;
+while(i<med&&j<=fin){
+k++;
+if(lista[i]<lista[j]){
+aux[k]=lista[i];
+i++;}
+else{
+aux[k]=lista[j];
+j++;}
+for(t=i;t<=med;t++){
+aux[k]=lista[t];}
+for(t=j;t<=fin;t++){
+aux[k]=lista[t];}
+for(t=1;t<=k;t++){
+lista[ini+t-1]=aux[t];}
+}
+}
+
+//implementacion del modulo m_sort
+void m_sort(Tlista lista,int ini,int fin){
+int med;
+if(ini<fin){
+med=(ini+fn)/2;
+m_sort(lista,ini,med);
+m_sort(lista,med+1,fin);
+merge(lista,ini,med,fin);}}
+
+
+
+
